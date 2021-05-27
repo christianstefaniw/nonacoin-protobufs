@@ -5,6 +5,6 @@
 
 <div align="center">
     <p>This repo contains all of the protocol buffers that will be used by the Nonacoin cryptocurrency</p>
-    <p>For more info about protobufs, [visit here](https://developers.google.com/protocol-buffers)</p>
+    <p>For more info about protobufs, <a href="https://developers.google.com/protocol-buffers">see here.</a></p>
 </div>
 
