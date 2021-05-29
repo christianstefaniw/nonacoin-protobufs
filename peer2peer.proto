@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package peer2peer;
+option go_package = "/peer2peerpb";
+
+message syncChainRequest {
+    string peer = 1;
+}
+
+message syncChainResponse {
+    string chain = 1;
+    string nodes = 2;
+}
+
+service peerToPeerService {
+    rpc syncChain(syncChainRequest) returns (syncChainResponse) {};
+}
