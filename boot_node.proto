@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package peer2peer;
+option go_package = "/bootnodepb";
+
+message bootstrapRequest {
+}
+
+message bootstrapResponse {
+    repeated string routingArray = 1;
+}
+
+service bootstrapNodeService {
+    rpc bootstrap(bootstrapRequest) returns (bootstrapResponse) {};
+}

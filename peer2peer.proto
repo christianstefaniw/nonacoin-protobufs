@@ -12,14 +12,6 @@ message syncChainResponse {
     string nodes = 2;
 }
 
-message bootstrapRequest {
-}
-
-message bootstrapResponse {
-    repeated string routingArray = 1;
-}
-
 service peerToPeerService {
     rpc syncChain(syncChainRequest) returns (syncChainResponse) {};
-    rpc bootstrap(bootstrapRequest) returns (bootstrapResponse) {};
 }
