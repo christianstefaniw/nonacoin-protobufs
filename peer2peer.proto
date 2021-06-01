@@ -3,13 +3,38 @@ syntax = "proto3";
 package peer2peer;
 option go_package = "/peer2peerpb";
 
+message bootstrapRequest {
+    string addr = 1;
+}
+message bootstrapResponse {
+    bool success = 1;
+}
+
+message retrieveRoutingTableRequest {}
+message retrieveRoutingTableResponse {
+    map<string, bool> table = 1;
+}
+
+message propagateNewConnectionRequest{
+    string addr = 1;
+}
+message propagateNewConnectionResponse{
+    bool success = 1;
+}
+
 message syncChainRequest {
     string peer = 1;
 }
-
 message syncChainResponse {
     string chain = 1;
     string nodes = 2;
+}
+
+service bootNodeService {
+    rpc bootstrap(bootstrapRequest) returns (bootstrapResponse) {};
+    rpc retrieveRoutingTable(retrieveRoutingTableRequest) returns (retrieveRoutingTableResponse) {}
+    rpc propagateNewConnection(propagateNewConnectionRequest) returns (propagateNewConnectionResponse) {};
+    rpc syncChain(syncChainRequest) returns (syncChainResponse) {};
 }
 
 service peerToPeerService {
