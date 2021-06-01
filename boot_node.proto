@@ -4,12 +4,13 @@ package peer2peer;
 option go_package = "/bootnodepb";
 
 message bootstrapRequest {
+    string addr = 1;
 }
 
 message bootstrapResponse {
-    repeated string routingArray = 1;
+    bool success = 1;
 }
 
-service bootstrapNodeService {
+service bootNodeService {
     rpc bootstrap(bootstrapRequest) returns (bootstrapResponse) {};
 }
