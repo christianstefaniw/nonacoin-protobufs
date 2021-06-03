@@ -7,7 +7,7 @@ message bootstrapRequest {
     string addr = 1;
 }
 message bootstrapResponse {
-    bool success = 1;
+    map<string, bool> routingTable = 1;
 }
 
 message retrieveRoutingTableRequest {}
